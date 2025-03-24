@@ -10,14 +10,13 @@
 #' @param mu0 scalar: starting value of the log-expectation of the lognormal distribution on the log scale.
 #' @param Psi0 non-negative scalar: starting value of the log-variance of the lognormal distribution on the log scale.
 #' @return Estimated parameters obtained from a bootstrap sample.
-#' @keywords mixture; profile likelihood; EM algorithm.
 #' @details At each bootstrap replication, the mixture is estimated with thresholds equal to ys(minRank), ys(minRank+1),..., ys(n),
 #' where n is the sample size and ys is the sample in ascending order. The function is typically called by LPfit (see the example below).
 #' @export
 #' @references  Bee, M. (2022), “On discriminating between lognormal and Pareto tail: a mixture-based approach”,
 #' Advances in Data Analysis and Classification, https://doi.org/10.1007/s11634-022-00497-4
 
-MLEBoot = function(x,y,minRank,p0,alpha0,mu0,Psi0)
+ProfBoot = function(x,y,minRank,p0,alpha0,mu0,Psi0)
 {
   samSiz <- length(y)
   indici = sample(samSiz, samSiz, replace = TRUE)

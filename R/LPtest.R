@@ -1,8 +1,10 @@
-#' Testing for a Pareto tail
+#' Profile-based testing for a Pareto tail
 #'
 #' This function draws a bootstrap sample from the null (lognormal) distribution and computes the test for the null hypothesis of
 #' a pure lognormal distribution versus the alternative of a lognormal-Pareto
-#' mixture. To be only called from ParallelTest.
+#' mixture, where the parameters of the latter are estimated via maximum profile
+#' likelihood. To be only called from ParallelTest. Estimation unde rthe alternative is perfromed
+#'
 #' @param x list: sequence of integers 1,...,K, where K is the mumber of datasets. Set x = 1 in case
 #' of a single dataset.
 #' @param n sample size.
@@ -12,7 +14,6 @@
 #' @return A list with the following elements:
 #'
 #' LR: observed value of the llr test.
-#' @keywords mixture; profile likelihood; log-likelihood ratio test.
 #' @export
 #' @import stats
 #' @examples
@@ -22,7 +23,7 @@
 #' minRank = 90
 #' res = LPtest(1,n,muNull,sigmaNull,minRank)
 #' @references{
-#'   \insertRef{bee22}{LNPar}
+#'   \insertRef{bee24a}{LNPar}
 #' }
 #'
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ParallelTest.R
 \name{ParallelTest}
 \alias{ParallelTest}
-\title{Testing for a Pareto tail}
+\title{Profile-based testing for a Pareto tail}
 \usage{
 ParallelTest(nboot, y, obsTest, minRank)
 }
@@ -25,11 +25,12 @@ pval: p-value of the test.
 \description{
 This function computes the bootstrap test for the null hypothesis of
 a pure lognormal distribution versus the alternative of a lognormal-Pareto
-mixture. Implemented via parallel computing.
+mixture, where the parameters of the latter are estimated via maximum profile
+likelihood. Implemented via parallel computing.
 }
 \examples{
 \donttest{minRank = 90
-mixFit <- LPfit(TN2016,minRank,0)
+mixFit <- LPfitProf(TN2016,minRank,0)
 ell1 <- mixFit$loglik
 estNull <- c(mean(log(TN2016)),sd(log(TN2016)))
 ellNull <- sum(log(dlnorm(TN2016,estNull[1],estNull[2])))
@@ -37,9 +38,3 @@ obsTest <- 2*(ell1-ellNull)
 nboot = 2
 TestRes = ParallelTest(nboot,TN2016,obsTest,minRank)}
 }
-\keyword{likelihood;}
-\keyword{log-likelihood}
-\keyword{mixture;}
-\keyword{profile}
-\keyword{ratio}
-\keyword{test.}

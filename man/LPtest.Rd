@@ -2,7 +2,7 @@
 % Please edit documentation in R/LPtest.R
 \name{LPtest}
 \alias{LPtest}
-\title{Testing for a Pareto tail}
+\title{Profile-based testing for a Pareto tail}
 \usage{
 LPtest(x, n, muNull, sigmaNull, minRank)
 }
@@ -26,7 +26,8 @@ LR: observed value of the llr test.
 \description{
 This function draws a bootstrap sample from the null (lognormal) distribution and computes the test for the null hypothesis of
 a pure lognormal distribution versus the alternative of a lognormal-Pareto
-mixture. To be only called from ParallelTest.
+mixture, where the parameters of the latter are estimated via maximum profile
+likelihood. To be only called from ParallelTest. Estimation unde rthe alternative is perfromed
 }
 \examples{
 n = 100
@@ -37,12 +38,6 @@ res = LPtest(1,n,muNull,sigmaNull,minRank)
 }
 \references{
 {
-\insertRef{bee22}{LNPar}
+\insertRef{bee24a}{LNPar}
 }
 }
-\keyword{likelihood;}
-\keyword{log-likelihood}
-\keyword{mixture;}
-\keyword{profile}
-\keyword{ratio}
-\keyword{test.}

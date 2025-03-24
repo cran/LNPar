@@ -1,4 +1,4 @@
-#' Estimating a lognormal-Pareto mixture by maximizing the profile log-likelihood
+#' Profile likelihood estimation of a lognormal-Pareto mixture
 #'
 #' This function fits a lognormal-Pareto mixture by maximizing the profile log-likelihood.
 #' @param y numerical vector: random sample from the mixture.
@@ -28,18 +28,17 @@
 #' @details Estimation is implemented as in Bee (2022). As of standard errors, at each bootstrap replication the mixture is estimated with thresholds equal to ys(minRank), ys(minRank+1),..., ys(n),
 #' where n is the sample size and ys is the sample sorted in ascending order. The latter procedure is implemented via parallel computing.
 #' If the algorithm does not converge in 1000 iterations, a message is displayed.
-#' @keywords mixture; profile likelihood.
 #' @export
 #' @examples
-#' mixFit <- LPfit(TN2016,90,0)
+#' mixFit <- LPfitProf(TN2016,90,0)
 #' @references{
-#'   \insertRef{bee22}{LNPar}
+#'   \insertRef{bee24a}{LNPar}
 #' }
 #'
 #'
 #' @importFrom Rdpack reprompt
 
-LPfit <- function(y,minRank,nboot)
+LPfitProf <- function(y,minRank,nboot)
 {
   ys <- sort(y)
   n <- length(ys)
@@ -91,7 +90,7 @@ LPfit <- function(y,minRank,nboot)
     }
     clust <- parallel::makeCluster(n.cores)
     BootMat = matrix(0,nboot,5)
-    temp <- parallel::parLapply(clust,nreps.list, MLEBoot,ys,minRank,p0,alpha0,mean(ys),var(ys))
+    temp <- parallel::parLapply(clust,nreps.list, ProfBoot,ys,minRank,p0,alpha0,mean(ys),var(ys))
     parallel::stopCluster(cl=clust)
     for (i in 1:nboot)
     {
