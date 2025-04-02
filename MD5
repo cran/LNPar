@@ -1,7 +1,7 @@
-34f3ffd4a942287523c18fe73027e94e *DESCRIPTION
+d21e4bc7bc6e39142ff7109a2106997f *DESCRIPTION
 aa71923f49164e8189c16f68db4a9453 *LICENSE
 9c42b8b71296349af61044b6500b457b *NAMESPACE
-262384d164dd8bae66562d03805abbb0 *NEWS.md
+cbb80890a747700265cccf219d77a990 *NEWS.md
 60b055d9faf3bd06eecdceaf9081baec *R/ECMEBoot.R
 50838ae9d18bbbb588a22886921c2a8c *R/LPfitEM.R
 52274225057573bbfd80a67f97a15c2f *R/LPfitProf.R
@@ -12,13 +12,13 @@ bba5925e694d8d8d9860756b62793d90 *R/ParallelTest.R
 40f69a9f8a7f00694e0d03dee564386c *R/ProfBoot.R
 ee69fa8d23400f76206bf9663ebc9e20 *R/dLnormParMix.R
 d5d6a424a865ec9676c93932251920dc *R/data.R
-4c5d12d4b9643625ea367acc823ee031 *R/dpareto.r
+6dc6b251551467cb5d869e5a30a29c2b *R/dpareto.r
 a9e443b8cb3eb884bf42cba06e79ee82 *R/ll_lnormparmix.R
 787a0b7fbd40ae4936456ebeb4ea5b83 *R/par_logn_mix_known.r
 91d7390faa29d94bef51bcf08d03497b *R/rLnormParMix.R
 c0ad25940eae998d3dbda643f8fad90e *R/rpareto.r
 29ea72fa197af535f094aa73280344c0 *README.md
-b3d0755f8f8d1fde1239e23e631692c2 *build/partial.rdb
+4294432739aaa0a30d0cefd782022b09 *build/partial.rdb
 c95c3c8b514398c4cab7dbe118de5c4a *data/TN2016.rda
 9768e4df1fb4c820472b32ece038cc90 *inst/REFERENCES.bib
 6ef45bed02de1ac538b75f412bcfa113 *man/ECMEBoot.Rd
@@ -31,7 +31,7 @@ c95c3c8b514398c4cab7dbe118de5c4a *data/TN2016.rda
 23ed4ef5ab31ec3f987e2b723200b632 *man/ProfBoot.Rd
 abc6037be888fa20b01edace227b1c85 *man/TN2016.Rd
 6827be5688fdd7b88cbd30a32eccdc17 *man/dLnormParMix.Rd
-20dbdeb8118e09143dc845746357d86e *man/dpareto.Rd
+bfd3a6c8ad9ddc1eee6ff22de9d50294 *man/dpareto.Rd
 ea2e4cc9efa1c0823016d67517bb05b1 *man/ll_lnormparmix.Rd
 47cb5d873a8ecb2acdc7045c5ad23276 *man/par_logn_mix_known.Rd
 8dfb1a523ac4f08a3a9413119e2f542b *man/rLnormParMix.Rd
